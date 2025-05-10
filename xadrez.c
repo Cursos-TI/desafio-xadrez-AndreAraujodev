@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define TAM 8
+const int tabuleiro = 8;  // Define o tamanho do tabuleiro
 
 int main() {
     int x, y;
@@ -14,7 +14,7 @@ int main() {
     printf("Coluna inicial (0 a 7): ");
     scanf("%d", &y);
 
-    if (x < 0 || x >= TAM || y < 0 || y >= TAM) {
+    if (x < 0 || x >= tabuleiro || y < 0 || y >= tabuleiro) {
         printf("Posição inválida.\n");
         return 0;
     }
@@ -32,7 +32,7 @@ int main() {
         printf("\nMovimento da Torre (5 casas para a direita):\n");
         i = 1;
         while (i <= 5) {
-            if (y + i < TAM) {
+            if (y + i < tabuleiro) {
                 printf("Movendo para a direita: (%d, %d)\n", x, y + i);
             }
             i++;
@@ -44,7 +44,7 @@ int main() {
         for (i = 1; i <= 5; i++) {
             int nx = x - i;
             int ny = y + i;
-            if (nx >= 0 && ny < TAM) {
+            if (nx >= 0 && ny < tabuleiro) {
                 printf("Cima, Direita -> (%d, %d)\n", nx, ny);
             }
         }
